@@ -135,6 +135,9 @@ runNewQuest(answers) {
                return internAns;
                })
        }
+       else{
+           return `There are no employees selectecd`
+       }
 
 };
 
