@@ -47,6 +47,7 @@ createIntern(){
  .then((res)=>{
     // create new instance of intern class using res
     // push to intern array
+    // join
  });
 }
 
