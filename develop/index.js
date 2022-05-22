@@ -45,7 +45,7 @@ function init() {
             // console.log(answers)
             // console.log (data)
             writeToFile('index.html', data)
-            createMenu()
+            // createMenu()
         });
 }
 
@@ -101,12 +101,12 @@ function engineer(){
       message:"What is your engineer's github?"
     }
   ])
-  .then(answers)=>{
-    const data = generateEngineer(answers)
+  .then((engineeranswers)=>{
+    const data = generateHTML(engineeranswers)
             // console.log(answers)
             // console.log (data)
             writeToFile('index.html', data)
-  }
+  })
 }
 
 function intern(){
@@ -133,8 +133,8 @@ function intern(){
       message:"What is your student's school?"
     }
   ])
-  .then((answers)=>{
-    const data = generateIntern(answers)
+  .then((internanswers)=>{
+    const data = generateHTML(internanswers)
             // console.log(answers)
             // console.log (data)
             writeToFile('index.html', data)
@@ -143,4 +143,3 @@ function intern(){
 
 // Function call to initialize app
 init();
-

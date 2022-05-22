@@ -1,5 +1,5 @@
 
-function generateHTML(answers) {
+function generateHTML(answers, engineeranswers, internanswers) {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -34,8 +34,46 @@ function generateHTML(answers) {
               </div>
             </div>
           </div>
+
     </body>
     </html>`
 }
 
 module.exports = generateHTML
+
+
+// <div class="row">
+// <div class="col s12 m7">
+//   <div class="card">
+//     <div class="card-content">
+//     <h1>Manager ${engineeranswers.name}</h1>
+//       <ul>
+//         <li>Id: ${engineeranswers.id}</li>
+//         <li>Email: ${engineeranswers.email}</li>
+//         <li>github: ${engineeranswers.github}</li>
+//       </ul>
+//     </div>
+//     <div class="card-action">
+//       <a href="#">This is a link</a>
+//     </div>
+//   </div>
+// </div>
+// </div>
+
+// <div class="row">
+// <div class="col s12 m7">
+//   <div class="card">
+//     <div class="card-content">
+//     <h1>Manager ${internanswers.name}</h1>
+//       <ul>
+//         <li>Id: ${internanswers.id}</li>
+//         <li>Email: ${internanswers.email}</li>
+//         <li>school: ${internanswers.school}</li>
+//       </ul>
+//     </div>
+//     <div class="card-action">
+//       <a href="#">This is a link</a>
+//     </div>
+//   </div>
+// </div>
+// </div>
