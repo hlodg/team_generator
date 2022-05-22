@@ -20,81 +20,13 @@ function generateHTML(answers) {
         <div class="row">
             <div class="col s12 m7">
               <div class="card">
-                <div class="card-image">
-                  <img src="./Assets/10-object-oriented-programming-homework-demo.png">
-                  <span class="card-title">Card Title</span>
-                </div>
                 <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/sample-1.jpg">
-                  <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/sample-1.jpg">
-                  <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/sample-1.jpg">
-                  <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m7">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/sample-1.jpg">
-                  <span class="card-title">Card Title</span>
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
+                <h1>Manager ${answers.name}</h1>
+                  <ul>
+                    <li>Id: ${answers.id}</li>
+                    <li>Email: ${answers.email}</li>
+                    <li>Office Number: ${answers.officeNumber}</li>
+                  </ul>
                 </div>
                 <div class="card-action">
                   <a href="#">This is a link</a>
