@@ -1,60 +1,49 @@
-// inquirer for team members
-// inquirer for information of team members
-// create classes for each type of role
-// html file generation - writing file
-
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require("util");
+const generateHTML= require('./utils/generateHTML.js')
 
+const managerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message:"What is your Manager's name?"
+      },
+      {
+        type: "input",
+        name: "id",
+        message:"What is your Manager's id?"
+      },
+      {
+        type: "input",
+        name: "email",
+        message:"What is your Manager's email?"
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message:"What is your Manager's office number?"
+      }
+      ];
 
-createManager(){
-  inquirer
-  .prompt([
-
- ])
- .then((res)=>{
-    // create new instance of manager class using res
- });
+function writeToFile(fileName, data) {
+  try {
+    fs.writeFileSync(fileName, data)
+  } catch (error) {
+      console.log(error)
+  }
 }
 
-createMenu(){
-  inquirer
-  .prompt([
-    // engineer, intern or quit
-  ])
-  .then((res)=>{
-    // if statement if intern call intern function, if engineer, call engineer function, if quit call create html 
- });
+function init() {
+    inquirer
+        .prompt(managerQuestions)
+        .then((answers)=>{
+            const data = generateHTML(answers)
+            // console.log(answers)
+            // console.log (data)
+            writeToFile('index.html', data)
+        });
 }
 
-createEngineer(){
-  inquirer
-  .prompt([
+// Function call to initialize app
+init();
 
- ])
- .then((res)=>{
-    // create new instance of engineer class using res
-    // push engineer to engineer array
- });
-}
-
-createIntern(){
-  inquirer
-  .prompt([
-
- ])
- .then((res)=>{
-    // create new instance of intern class using res
-    // push to intern array
-    // join
- });
-}
-
-// new file -generate team function --> nested (generatecard manager, engineer, intern --> push to array and call in new function which would generate skeleton)
-createHTML(){
-  const interntemplates = internarray.map((intern)=>{
-    return ``
-  })
-  // map over
-}
