@@ -51,9 +51,10 @@ createIntern(){
  });
 }
 
+// new file -generate team function --> nested (generatecard manager, engineer, intern --> push to array and call in new function which would generate skeleton)
 createHTML(){
   const interntemplates = internarray.map((intern)=>{
-    return `HTML FOR INTERN`
+    return ``
   })
   // map over
 }
