@@ -41,11 +41,11 @@ function init() {
     inquirer
         .prompt(managerQuestions)
         .then((answers)=>{
-            const data = generateHTML(answers)
+            // const data = generateHTML(answers)
             // console.log(answers)
             // console.log (data)
-            writeToFile('index.html', data)
-            // createMenu()
+            // writeToFile('index.html', data)
+            createMenu(answers)
         });
 }
 
