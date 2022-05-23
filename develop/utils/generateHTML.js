@@ -1,5 +1,7 @@
+var generateEngineer = require('./generateEngineer')
+var generateIntern = require('./generateIntern')
 
-function generateHTML(answers, engineeranswers, internanswers) {
+function generateHTML(manager, intern, engineer) {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -21,19 +23,19 @@ function generateHTML(answers, engineeranswers, internanswers) {
             <div class="col s12 m7">
               <div class="card">
                 <div class="card-content">
-                <h1>Manager ${answers.name}</h1>
+                <h1>Manager ${manager.name}</h1>
                   <ul>
-                    <li>Id: ${answers.id}</li>
-                    <li>Email: ${answers.email}</li>
-                    <li>Office Number: ${answers.officeNumber}</li>
+                    <li>Id: ${manager.id}</li>
+                    <li>Email: ${manager.email}</li>
+                    <li>Office Number: ${manager.officeNumber}</li>
                   </ul>
                 </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                </div>
+
               </div>
             </div>
           </div>
+          ${generateEngineer(engineer)}
+          ${generateIntern(intern)}
 
     </body>
     </html>`
@@ -41,39 +43,3 @@ function generateHTML(answers, engineeranswers, internanswers) {
 
 module.exports = generateHTML
 
-
-// <div class="row">
-// <div class="col s12 m7">
-//   <div class="card">
-//     <div class="card-content">
-//     <h1>Manager ${engineeranswers.name}</h1>
-//       <ul>
-//         <li>Id: ${engineeranswers.id}</li>
-//         <li>Email: ${engineeranswers.email}</li>
-//         <li>github: ${engineeranswers.github}</li>
-//       </ul>
-//     </div>
-//     <div class="card-action">
-//       <a href="#">This is a link</a>
-//     </div>
-//   </div>
-// </div>
-// </div>
-
-// <div class="row">
-// <div class="col s12 m7">
-//   <div class="card">
-//     <div class="card-content">
-//     <h1>Manager ${internanswers.name}</h1>
-//       <ul>
-//         <li>Id: ${internanswers.id}</li>
-//         <li>Email: ${internanswers.email}</li>
-//         <li>school: ${internanswers.school}</li>
-//       </ul>
-//     </div>
-//     <div class="card-action">
-//       <a href="#">This is a link</a>
-//     </div>
-//   </div>
-// </div>
-// </div>

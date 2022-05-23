@@ -1,21 +1,26 @@
-// function generateEngineer(answers){
-//     return `        <div class="row">
-//     <div class="col s12 m7">
-//       <div class="card">
-//         <div class="card-content">
-//         <h1>Manager ${answers.name}</h1>
-//           <ul>
-//             <li>Id: ${answers.id}</li>
-//             <li>Email: ${answers.email}</li>
-//             <li>Office Number: ${answers.github}</li>
-//           </ul>
-//         </div>
-//         <div class="card-action">
-//           <a href="#">This is a link</a>
-//         </div>
-//       </div>
-//     </div>
-//   </div>`
-// }
+var engineerCards = [];
 
-// module.exports = generateEngineer
+function generateEngineer(engineer){
+    for (let i = 0; i < engineer.length; i++) {
+        var card=`<div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-content">
+        <h1>Engineer: ${engineer[i].name}</h1>
+          <ul>
+            <li>Id: ${engineer[i].id}</li>
+            <li>Email: ${engineer[i].email}</li>
+            <li>Office Number: ${engineer[i].github}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>`
+        engineerCards.push(card);
+    console.log(engineerCards)
+      }
+    return engineerCards.join("");
+    
+}
+
+module.exports = generateEngineer

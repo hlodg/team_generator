@@ -5,6 +5,9 @@ const generateEngineer= require('./utils/generateEngineer.js');
 const generateIntern =require ('./utils/generateIntern')
 
 const internal = require('stream');
+const Manager = require('./lib/Manager.js');
+const Intern = require('./lib/Intern.js');
+const Engineer= require ('./lib/Engineer');
 
 const managerQuestions = [
     {
@@ -37,6 +40,10 @@ function writeToFile(fileName, data) {
   }
 }
 
+var manager;
+var intern=[];
+var engineer=[];
+
 function init() {
     inquirer
         .prompt(managerQuestions)
@@ -45,7 +52,9 @@ function init() {
             // console.log(answers)
             // console.log (data)
             // writeToFile('index.html', data)
-            createMenu(answers)
+            manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+            console.log (manager)
+            createMenu()
         });
 }
 
@@ -63,21 +72,23 @@ function createMenu(){
   ])
   .then((role)=>{
     switch(role.roletype){
-      case role[0]:
-        engineer();
+      case menu[0]:
+        createEngineer();
         break;
-      case role[1]:
-        intern(); 
+      case menu[1]:
+        createIntern(); 
         break;
-      case role[3]:
-        console.log("you only added a manager");
+      case menu[2]:
+        var data = generateHTML(manager, intern, engineer)
+        console.log("you are done");
+            writeToFile('index.html', data)
       break;
     }
   }
   )
 }
 
-function engineer(){
+function createEngineer(){
   inquirer
   .prompt([
     {
@@ -101,15 +112,19 @@ function engineer(){
       message:"What is your engineer's github?"
     }
   ])
-  .then((engineeranswers)=>{
-    const data = generateHTML(engineeranswers)
+  .then(({name, id, email, github})=>{
+    // const data = generateHTML(engineeranswers)
             // console.log(answers)
             // console.log (data)
-            writeToFile('index.html', data)
+            // writeToFile('index.html', data)
+        var data= new Engineer (name, id, email, github)
+        engineer.push(data)
+        console.log(engineer)
+        createMenu()
   })
 }
 
-function intern(){
+function createIntern(){
   inquirer
   .prompt([
     {
@@ -133,11 +148,15 @@ function intern(){
       message:"What is your student's school?"
     }
   ])
-  .then((internanswers)=>{
-    const data = generateHTML(internanswers)
+  .then(({name, id, email, school})=>{
+    // const data = generateHTML(internanswers)
             // console.log(answers)
             // console.log (data)
-            writeToFile('index.html', data)
+            // writeToFile('index.html', data)
+            var data = new Intern(name, id, email, school)
+            intern.push(data)
+            console.log (intern)
+            createMenu()
 })
 }
 
